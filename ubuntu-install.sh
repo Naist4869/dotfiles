@@ -16,6 +16,9 @@ tar xvf go1.14.1.linux-amd64.tar.gz && rm go1.14.1.linux-amd64.tar.gz
 mv /usr/local/goes/go /usr/local/goes/go1.14
 ln -s /usr/local/goes/go1.14 /usr/local/goes/go
 ln -s /usr/local/goes/go/bin/go /usr/local/bin/go
+go env -w GOPROXY="https://goproxy.io,https://mirrors.aliyun.com/goproxy/,direct,https://proxy.golang.org"
+go env -w GO111MODULE=on
+go env -w GOPRIVATE="github.com/Naist4869"
 
 ## install python
 apt install -y python3-pip
@@ -35,7 +38,7 @@ source ~/.zshrc
 cp vim/vimrc.config ~/.vimrc
 mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+vim +PluginInstall +qall # slow
 vim -c GoInstallBinaries
 ~/.vim/bundle/YouCompleteMe/install.py # --clang-completer --tern-completer # the last two are too slow, maybe later
 
