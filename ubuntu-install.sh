@@ -6,7 +6,7 @@ cd ~
 ## install basic tools
 apt update
 apt -y upgrade
-apt install -y build-essential vim zsh git tree clang cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc redis docker.io nodejs npm git hugo
+apt install -y build-essential vim zsh git tree clang cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc redis docker.io nodejs htop hugo
 
 # install golang
 mkdir -p /usr/local/goes
